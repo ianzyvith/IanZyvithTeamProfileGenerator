@@ -8,4 +8,4 @@ To use OOP and TDD to create a Team Profile Generation application with Node, In
 
 This video demonstrates that the application passes all tests and works as intended.
 
-![alt="testvideo"](./assets/Untitled_%20Oct%2014%2C%202022%206_28%20PM.gif)
+![alt="testvideo"](./assets/Untitled_%20Oct%2021%2C%202022%207_32%20PM.gif)
