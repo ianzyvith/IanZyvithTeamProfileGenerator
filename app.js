@@ -97,7 +97,22 @@ const employeePrompt = () => {
       {
         type: "input",
         name: "name",
-        message: "What is their Name?",
+        message: "What is the Engineer's Name?",
+        when: (input) => input.role === "Engineer",
+        validate: (name) => {
+          if (name) {
+            return true;
+          } else {
+            console.log("Enter a Name");
+            return false;
+          }
+        },
+      },
+      {
+        type: "input",
+        name: "name",
+        message: "What is the Intern's Name?",
+        when: (input) => input.role === "Intern",
         validate: (name) => {
           if (name) {
             return true;
@@ -110,7 +125,22 @@ const employeePrompt = () => {
       {
         type: "input",
         name: "id",
-        message: "What is their ID?",
+        message: "What is the Engineer's ID?",
+        when: (input) => input.role === "Engineer",
+        validate: (id) => {
+          if (isNaN(id)) {
+            console.log("Enter a Valid ID");
+            return false;
+          } else {
+            return true;
+          }
+        },
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "What is the Intern's ID?",
+        when: (input) => input.role === "Intern",
         validate: (id) => {
           if (isNaN(id)) {
             console.log("Enter a Valid ID");
@@ -123,7 +153,26 @@ const employeePrompt = () => {
       {
         type: "input",
         name: "email",
-        message: "What is the their Email?",
+        message: "What is the the Engineer's Email?",
+        when: (input) => input.role === "Engineer",
+        validate: (email) => {
+          valid =
+            /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(
+              email
+            );
+          if (valid) {
+            return true;
+          } else {
+            console.log("Enter a Valid Email");
+            return false;
+          }
+        },
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "What is the the Intern's Email?",
+        when: (input) => input.role === "Intern",
         validate: (email) => {
           valid =
             /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(

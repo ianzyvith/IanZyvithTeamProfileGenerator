@@ -63,8 +63,7 @@ const createIntern = function (intern) {
 
 // create html
 createHTML = (data) => {
-  // array
-  pageArray = [];
+  dataArray = [];
 
   for (let i = 0; i < data.length; i++) {
     const employee = data[i];
@@ -74,26 +73,26 @@ createHTML = (data) => {
     if (role === "Manager") {
       const manager = createManager(employee);
 
-      pageArray.push(manager);
+      dataArray.push(manager);
     }
 
     // call engineer function
     if (role === "Engineer") {
       const engineers = createEngineer(employee);
 
-      pageArray.push(engineers);
+      dataArray.push(engineers);
     }
 
     // call intern function
     if (role === "Intern") {
       const interns = createIntern(employee);
 
-      pageArray.push(interns);
+      dataArray.push(interns);
     }
   }
 
   // joining strings
-  const employees = pageArray.join("");
+  const employees = dataArray.join("");
 
   // return to generated page
   const createTeam = createTeamPage(employees);
