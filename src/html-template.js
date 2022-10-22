@@ -1,4 +1,4 @@
-const createManager = function (manager) {
+const addManager = function (manager) {
   return `
     <card class="card col-3 shadow px-0 mx-3 mb-3">
     <div class="card-header bg-info">
@@ -18,7 +18,7 @@ const createManager = function (manager) {
       `;
 };
 
-const createEngineer = function (engineer) {
+const addEngineer = function (engineer) {
   return `
     <card class="card col-3 shadow px-0 mx-3 mb-3">
     <div class="card-header bg-info">
@@ -38,7 +38,7 @@ const createEngineer = function (engineer) {
       `;
 };
 
-const createIntern = function (intern) {
+const addIntern = function (intern) {
   return `
     <card class="card col-3 shadow px-0 mx-3 mb-3">
     <div class="card-header bg-info">
@@ -66,17 +66,17 @@ createHTML = (data) => {
     const role = employee.getRole();
 
     if (role === "Manager") {
-      const manager = createManager(employee);
+      const manager = addManager(employee);
       dataArray.push(manager);
     }
 
     if (role === "Engineer") {
-      const engineers = createEngineer(employee);
+      const engineers = addEngineer(employee);
       dataArray.push(engineers);
     }
 
     if (role === "Intern") {
-      const interns = createIntern(employee);
+      const interns = addIntern(employee);
       dataArray.push(interns);
     }
   }
