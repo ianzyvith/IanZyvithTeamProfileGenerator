@@ -220,26 +220,26 @@ const employeePrompt = () => {
       },
     ])
     .then((inputs) => {
-      let employee;
+      let newEmployee;
       if (inputs.role === "Engineer") {
-        employee = new Engineer(
+        newEmployee = new Engineer(
           inputs.name,
           inputs.id,
           inputs.email,
           inputs.github
         );
-        console.log(employee);
+        console.log(newEmployee);
       } else if (inputs.role === "Intern") {
-        employee = new Intern(
+        newEmployee = new Intern(
           inputs.name,
           inputs.id,
           inputs.email,
           inputs.school
         );
-        console.log(employee);
+        console.log(newEmployee);
       }
 
-      teamList.push(employee);
+      teamList.push(newEmployee);
 
       if (inputs.addAnother) {
         return employeePrompt(teamList);
@@ -265,8 +265,8 @@ managerPrompt()
   .then((teamList) => {
     return createHTML(teamList);
   })
-  .then((pageHTML) => {
-    return writeFile(pageHTML);
+  .then((HTML) => {
+    return writeFile(HTML);
   })
   .catch((err) => {
     console.log(err);
