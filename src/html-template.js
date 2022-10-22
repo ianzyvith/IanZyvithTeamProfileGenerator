@@ -1,4 +1,3 @@
-// create manager
 const createManager = function (manager) {
   return `
     <card class="card col-3 shadow px-0 mx-3 mb-3">
@@ -19,7 +18,6 @@ const createManager = function (manager) {
       `;
 };
 
-// create engineer
 const createEngineer = function (engineer) {
   return `
     <card class="card col-3 shadow px-0 mx-3 mb-3">
@@ -40,7 +38,6 @@ const createEngineer = function (engineer) {
       `;
 };
 
-// create intern
 const createIntern = function (intern) {
   return `
     <card class="card col-3 shadow px-0 mx-3 mb-3">
@@ -61,7 +58,6 @@ const createIntern = function (intern) {
       `;
 };
 
-// create html
 createHTML = (data) => {
   dataArray = [];
 
@@ -69,38 +65,29 @@ createHTML = (data) => {
     const employee = data[i];
     const role = employee.getRole();
 
-    // call manager function
     if (role === "Manager") {
       const manager = createManager(employee);
-
       dataArray.push(manager);
     }
 
-    // call engineer function
     if (role === "Engineer") {
       const engineers = createEngineer(employee);
-
       dataArray.push(engineers);
     }
 
-    // call intern function
     if (role === "Intern") {
       const interns = createIntern(employee);
-
       dataArray.push(interns);
     }
   }
 
-  // joining strings
   const employees = dataArray.join("");
 
-  // return to generated page
-  const createTeam = createTeamPage(employees);
+  const createTeam = teamHTML(employees);
   return createTeam;
 };
 
-// create team page
-const createTeamPage = function (employees) {
+const teamHTML = function (employees) {
   return `
     <!DOCTYPE html>
   <html lang="en">
